@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>羽烬庭 | 极致Minecraft服务器体验</title>
     <link href="https://fonts.googleapis.com/css2?family=Minecraft&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script>
-      function cptxt() {
-      var copyText = document.getElementById("mc.lunchmc.top:26277");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(copyText.value);
-      alert("已复制到剪切板！");
-}
-    </script>
+<script>
+  let text = "mc.lunchmc.top:26277"
+  const cptxt = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+      alert('已复制！')
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+</script>
     <style>
         :root {
             --primary: #2ECC71;
@@ -409,7 +412,7 @@
             <p>一个充满创意的 Minecraft 服务器</p>
             <div class="server-ip">mc.lunchmc.top:26277</div>
             <div>
-                <a href="#" class="btn" onclick="cptxt()">复制地址</a>
+                <a href="javascript:void(0);" onclick="cptxt()" class="btn">复制地址</a>
                 <a href="#about" class="btn btn-accent">了解更多</a>
             </div>
         </div>
@@ -548,7 +551,7 @@
                     <p><strong>在线时间:</strong> 24/7</p>
                     
                     <h3 style="margin-top: 2rem;">联系方式</h3>
-                    <p><strong>邮箱:</strong> contact@lunchmc.top/p>
+                    <p><strong>邮箱:</strong> contact@lunchmc.top</p>
                     <p><strong>QQ群:</strong> 1032645734</p>
                     <p><strong>Discord:</strong> yjt-dc.lunchmc.top</p>
                     
@@ -559,16 +562,6 @@
                         <a href="#"><i>微博</i></a>
                     </div>
                 </div>
-                //<div class="contact-form">
-                    //<h3>发送消息</h3>
-                    //<form>
-                        //<input type="text" placeholder="您的名字" required>
-                        //<input type="email" placeholder="您的邮箱" required>
-                        //<input type="text" placeholder="主题">
-                      //  <textarea rows="5" placeholder="您的消息" required></textarea>
-                    //    <button type="submit" class="btn">发送消息</button>
-                  //  </form>
-                //</div>
             </div>
         </div>
     </section>
